@@ -2,7 +2,7 @@ var   express = require('express')
 	, hhtp = require('http')
 	, async = require('async')
 	, multer = require('multer')
-	, upload = multer({dest: uploads/'})
+	, upload = multer({dest: 'uploads/'})
 	, exphbs = require('express-handlebars')
 	, easyimg = require('easyimage')
 	, _ = require('lodash')
@@ -12,13 +12,13 @@ var   express = require('express')
 // Image upload exts
 
 var exts = {
-	'image/jpeg': '.jpg'
-	'image/png' : '.png'
+	'image/jpeg': '.jpg',
+	'image/png' : '.png',
 	'image/gif' : '.gif'
 };
 
 
-var port = 8090l
+var port = 8090;
 var app = express();
 app.use(express.statc(_dirname + '/public'))
 
@@ -80,14 +80,15 @@ app.post('/upload', upload.single('file'), function(req, res, next){
         );
       },
 
-    //Resize image to 960 px (save to dst)
+    //Resize image to 960 px (save to dst)'
+      function( callback ) {
       easyimg.resize(
-        {   
-            width : 960,
-            src : src;
-            dst : dst
-        }
-      ).then(function(image) {return callback(); });
+          {
+            width      :   960,
+            src        :   src,
+            dst        :   dst
+          }
+        ).then(function(image) { return callback(); });
       },
 
     /** OPENCV STUFF: 'faces' is an array of hashes (x and y coordinates, width and height,) about found faces:

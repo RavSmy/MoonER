@@ -1,0 +1,30 @@
+{{#if faces.length == 1}}
+	<div class="alart alert-success" role="alert">
+	  I found you! 
+	</div>
+
+	<div class="frame">
+		<img src="/images/{{ filename }}">
+	</div>
+
+	<a href="#" style="width: {{ faces.0.width }}px; 
+                       height: {{ faces.0.height }}px; 
+                       left: {{ faces.0.x }}px; 
+                       top: {{ faces.0.y }}px;"></a>  
+
+
+{{else}}
+	{{if faces.length > 1}} 
+		<div class="alart alert-warning" role="alert">
+			Too many faces :/
+		</div>
+	{{/if}}
+
+	{{else}}
+		<div class="alart alert-warning" role="alert">
+	  	Can't find you :/	
+		</div>
+{{/if}}
+
+<a href="/" class="btn btn-default">Do it all again...</a>
+
