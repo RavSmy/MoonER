@@ -1,7 +1,7 @@
 
 # MoonER
 
-<a link = "https://github.com/AYESDIE/ApertER-Discord-API">ApertER here<\a>
+<a link = "https://github.com/AYESDIE/ApertER-Discord-API">ApertER here</a>
 
 Emotion Recognition based music recommendation web app. 
 
